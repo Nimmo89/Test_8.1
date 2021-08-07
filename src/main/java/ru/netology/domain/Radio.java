@@ -17,6 +17,10 @@ public class Radio {
         return minNumberStation;
     }
 
+    public int getCurNumStation() {
+        return curNumStation;
+    }
+
     public int getMaxVolume() {
         return maxVolume;
     }
@@ -29,22 +33,14 @@ public class Radio {
         return currentVolume;
     }
 
-    public void setCurNumStation(int curNumStation) {
-        if (curNumStation < minNumberStation) {  //При выборе станции меньше минимальной, значение установится на минимальную станцию
-            curNumStation = minNumberStation;
-        }
-        if (curNumStation > maxNumberStation) {  //При выборе станции больше максимальной, значение установится на максимальную станцию
-            curNumStation = maxNumberStation;
-        }
-        this.curNumStation = curNumStation;
-    }
-
-    public void increase1p() {
+    public int increase1p() {
         setCurrentVolume(currentVolume + 1);
+        return currentVolume;
     }
 
-    public void decrease1p() {
+    public int decrease1p() {
         setCurrentVolume(currentVolume - 1);
+        return currentVolume;
     }
 
     public void setCurrentVolume(int currentVolume) {
@@ -63,10 +59,10 @@ public class Radio {
 //            //System.out.print("Maximum Volume");
 //        }
 //    }
-////            currentVolume = currentVolume + 1;
-////        } else if (currentVolume == maxVolume) {
-////            System.out.print("Maximum Volume");
-////        }
+//            currentVolume = currentVolume + 1;
+//        } else if (currentVolume == maxVolume) {
+//            System.out.print("Maximum Volume");
+//        }
 
 //    public void decreaseVolume(int i) {
 //        if (currentVolume > minVolume) {
@@ -76,19 +72,33 @@ public class Radio {
 //        }
 //    }
 
-    public void increaseStation() {
-        if (curNumStation < maxNumberStation) {     //При нажатии кнопки "Следующая станция" если станция меньше максимальной то переключится на +1
-            curNumStation = curNumStation + 1;
-        } else if (curNumStation == maxNumberStation) {     //При нажатии кнопки "Следующая станция" если станция и так выбрана 9 то переключится на 1
-            curNumStation = minNumberStation;
-        }
+    public int increaseStation() {
+        setCurNumStation(curNumStation + 1);
+        return curNumStation;
+//        if (curNumStation < maxNumberStation) {     //При нажатии кнопки "Следующая станция" если станция меньше максимальной то переключится на +1
+//            curNumStation = curNumStation + 1;
+//        } else if (curNumStation == maxNumberStation) {     //При нажатии кнопки "Следующая станция" если станция и так выбрана 9 то переключится на 1
+//            curNumStation = minNumberStation;
+//        }
     }
 
-    public void decreaseStation() {
-        if (curNumStation > minNumberStation) {     //При нажатии кнопки "Предыдущая станция" если станция больше минимальной то переключится на -1
-            curNumStation = curNumStation - 1;
-        } else if (curNumStation == minNumberStation) {     //При нажатии кнопки "Предыдущая станция" если станция и так выбрана 1 то переключится на 9
-            curNumStation = maxNumberStation;
+    public int decreaseStation() {
+        setCurNumStation(curNumStation - 1);
+        return curNumStation;
+//        if (curNumStation > minNumberStation) {     //При нажатии кнопки "Предыдущая станция" если станция больше минимальной то переключится на -1
+//            curNumStation = curNumStation - 1;
+//        } else if (curNumStation == minNumberStation) {     //При нажатии кнопки "Предыдущая станция" если станция и так выбрана 1 то переключится на 9
+//            curNumStation = maxNumberStation;
+//        }
+    }
+
+    public void setCurNumStation(int curNumStation) {
+        if (curNumStation < minNumberStation) {  //При выборе станции меньше минимальной, значение установится на минимальную станцию
+            curNumStation = maxNumberStation - 1;
         }
+        if (curNumStation > maxNumberStation) {  //При выборе станции больше максимальной, значение установится на максимальную станцию
+            curNumStation = minNumberStation;
+        }
+        this.curNumStation = curNumStation;
     }
 }
