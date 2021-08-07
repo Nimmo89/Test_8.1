@@ -57,24 +57,24 @@ public class Radio {
         this.currentVolume = currentVolume;
     }
 
-    public void increaseVolumeOverMax() {
-        if (currentVolume >= maxVolume) {
-            return;
-            //System.out.print("Maximum Volume");
-        }
-    }
-//            currentVolume = currentVolume + 1;
-//        } else if (currentVolume == maxVolume) {
-//            System.out.print("Maximum Volume");
+//    public void increaseVolumeOverMax() {
+//        if (currentVolume >= maxVolume) {
+//            return;
+//            //System.out.print("Maximum Volume");
 //        }
+//    }
+////            currentVolume = currentVolume + 1;
+////        } else if (currentVolume == maxVolume) {
+////            System.out.print("Maximum Volume");
+////        }
 
-    public void decreaseVolume(int i) {
-        if (currentVolume > minVolume) {
-            currentVolume = currentVolume - 1;
-        } else if (currentVolume == minVolume) {
-            System.out.print("Mute");
-        }
-    }
+//    public void decreaseVolume(int i) {
+//        if (currentVolume > minVolume) {
+//            currentVolume = currentVolume - 1;
+//        } else if (currentVolume == minVolume) {
+//            System.out.print("Mute");
+//        }
+//    }
 
     public void increaseStation() {
         if (curNumStation < maxNumberStation) {     //При нажатии кнопки "Следующая станция" если станция меньше максимальной то переключится на +1
