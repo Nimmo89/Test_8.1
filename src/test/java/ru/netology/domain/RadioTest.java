@@ -6,30 +6,6 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class RadioTest {
 
-//    @Test
-//    void getMaxNumberStation() {
-//    }
-//
-//    @Test
-//    void getMinNumberStation() {
-//    }
-//
-//    @Test
-//    void getMaxVolume() {
-//    }
-//
-//    @Test
-//    void getMinVolume() {
-//    }
-//
-//    @Test
-//    void getCurrentVolume() {
-//    }
-//
-//    @Test
-//    void setCurNumStation() {
-//    }
-
     @Test
     public void increase1p() {  //Увеличение громкости на 1 пункт
         Radio rad = new Radio();
@@ -55,10 +31,6 @@ class RadioTest {
 
         assertEquals(expected, actual);
     }
-
-//    @Test
-//    void setCurrentVolume() {
-//    }
 
     @Test
     public void increaseVolumeOverMax() {  //Увеличение громкости сверхмаксимумв на 1
