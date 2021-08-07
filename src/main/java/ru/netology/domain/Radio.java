@@ -94,7 +94,7 @@ public class Radio {
 
     public void setCurNumStation(int curNumStation) {
         if (curNumStation < minNumberStation) {  //При выборе станции меньше минимальной, значение установится на минимальную станцию
-            curNumStation = maxNumberStation - 1;
+            curNumStation = maxNumberStation;
         }
         if (curNumStation > maxNumberStation) {  //При выборе станции больше максимальной, значение установится на максимальную станцию
             curNumStation = minNumberStation;
