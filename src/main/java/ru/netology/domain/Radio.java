@@ -1,44 +1,74 @@
 package ru.netology.domain;
 
 public class Radio {
-    private int currentVolume;
     private int maxNumberStation = 9;
-    private int minNumberStation = 1;
+    private int minNumberStation = 0;
     private int curNumStation;
     private int maxVolume = 10;
     private int minVolume = 0;
+    private int currentVolume;
     private boolean on;
 
+    public int getMaxNumberStation() {
+        return maxNumberStation;
+    }
 
-    public void setCurNumStation(int newCurNumStation) {
-        if (newCurNumStation < minNumberStation) {  //При выборе станции меньше минимальной, значение установится на минимальную станцию
+    public int getMinNumberStation() {
+        return minNumberStation;
+    }
+
+    public int getMaxVolume() {
+        return maxVolume;
+    }
+
+    public int getMinVolume() {
+        return minVolume;
+    }
+
+    public int getCurrentVolume() {
+        return currentVolume;
+    }
+
+    public void setCurNumStation(int curNumStation) {
+        if (curNumStation < minNumberStation) {  //При выборе станции меньше минимальной, значение установится на минимальную станцию
             curNumStation = minNumberStation;
         }
-        if (newCurNumStation > maxNumberStation) {  //При выборе станции больше максимальной, значение установится на максимальную станцию
+        if (curNumStation > maxNumberStation) {  //При выборе станции больше максимальной, значение установится на максимальную станцию
             curNumStation = maxNumberStation;
         }
-        this.curNumStation = newCurNumStation;
+        this.curNumStation = curNumStation;
     }
 
-    public void setCurrentVolume(int newCurrentVolume) {
-        if (newCurrentVolume > minVolume) {     //При выборе громкости меньше минимальной
+    public void increase1p() {
+        setCurrentVolume(currentVolume + 1);
+    }
+
+    public void decrease1p() {
+        setCurrentVolume(currentVolume - 1);
+    }
+
+    public void setCurrentVolume(int currentVolume) {
+        if (currentVolume < minVolume) {     //При выборе громкости меньше минимальной
             return;
         }
-        if (newCurrentVolume < maxVolume) {     //При выборе громкости больше Максимальной
+        if (currentVolume > maxVolume) {     //При выборе громкости больше Максимальной
             return;
         }
-        this.currentVolume = newCurrentVolume;
+        this.currentVolume = currentVolume;
     }
 
-    public void increaseVolume() {
-        if (currentVolume < maxVolume) {
-            currentVolume = currentVolume + 1;
-        } else if (currentVolume == maxVolume){
-            System.out.print("Maximum Volume");
+    public void increaseVolumeOverMax() {
+        if (currentVolume >= maxVolume) {
+            return;
+            //System.out.print("Maximum Volume");
         }
     }
+//            currentVolume = currentVolume + 1;
+//        } else if (currentVolume == maxVolume) {
+//            System.out.print("Maximum Volume");
+//        }
 
-    public void decreaseVolume() {
+    public void decreaseVolume(int i) {
         if (currentVolume > minVolume) {
             currentVolume = currentVolume - 1;
         } else if (currentVolume == minVolume) {
@@ -61,9 +91,4 @@ public class Radio {
             curNumStation = maxNumberStation;
         }
     }
-
-
-
-
-
 }
