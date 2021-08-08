@@ -35,12 +35,12 @@ class RadioTest {
     @Test
     public void increaseVolumeOverMax() {  //Увеличение громкости сверхмаксимумв на 1
         Radio rad = new Radio();
-        rad.setCurrentVolume(rad.getMaxVolume() + 1);
+        rad.setCurrentVolume(rad.getMaxVolume());
 
         rad.increase1p();
 
         int expected = rad.getMaxVolume();
-        int actual = rad.getMaxVolume();
+        int actual = rad.getCurrentVolume();
 
         assertEquals(expected, actual);
     }
@@ -48,12 +48,12 @@ class RadioTest {
     @Test
     public void decreaseVolumeOverMin() {  //Уменьшение громкости смерхминимума на 1
         Radio rad = new Radio();
-        rad.setCurrentVolume(rad.getMinVolume() - 1);
+        rad.setCurrentVolume(rad.getMinVolume());
 
         rad.decrease1p();
 
         int expected = rad.getMinVolume();
-        int actual = rad.getMinVolume();
+        int actual = rad.getCurrentVolume();
 
         assertEquals(expected, actual);
     }

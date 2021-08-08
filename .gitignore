@@ -57,3 +57,4 @@ out/
 !**/src/main/**
 !**/src/test/**
 /.gitignore
+/src/main/java/NotDZ.java
