@@ -5,10 +5,12 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class RadioTest {
-
+    Radio rad = new Radio();
+    Radio rad1 = new Radio(74);
+    Radio rad2 = new Radio(44);
+    Radio rad3 = new Radio(2);
     @Test
     public void increase1p() {  //Увеличение громкости на 1 пункт
-        Radio rad = new Radio();
         rad.setCurrentVolume(rad.getMaxVolume() - 1);
 
         rad.increase1p();
@@ -17,11 +19,10 @@ class RadioTest {
         int actual = rad.getCurrentVolume();
 
         assertEquals(expected, actual);
-    }
+    }  //Увеличение громкости на 1
 
     @Test
     public void decrease1p() {  //Уменьшение громкости на 1 пункт
-        Radio rad = new Radio();
         rad.setCurrentVolume(rad.getMinVolume() + 1);
 
         rad.decrease1p();
@@ -30,11 +31,10 @@ class RadioTest {
         int actual = rad.getCurrentVolume();
 
         assertEquals(expected, actual);
-    }
+    }  //Снижение громкости на 1
 
     @Test
     public void increaseVolumeOverMax() {  //Увеличение громкости сверхмаксимумв на 1
-        Radio rad = new Radio();
         rad.setCurrentVolume(rad.getMaxVolume());
 
         rad.increase1p();
@@ -47,7 +47,6 @@ class RadioTest {
 
     @Test
     public void decreaseVolumeOverMin() {  //Уменьшение громкости смерхминимума на 1
-        Radio rad = new Radio();
         rad.setCurrentVolume(rad.getMinVolume());
 
         rad.decrease1p();
@@ -60,52 +59,48 @@ class RadioTest {
 
     @Test
     public void increaseStation() {
-        Radio rad = new Radio();
-        rad.setCurNumStation(rad.getMaxNumberStation() - 1);
+        rad1.setCurNumStation(rad1.getMaxNumberStation() - 1);
 
-        rad.increaseStation();
+        rad1.increaseStation();
 
-        int expected = rad.getMaxNumberStation();
-        int actual = rad.getCurNumStation();
+        int expected = rad1.getMaxNumberStation();
+        int actual = rad1.getCurNumStation();
 
         assertEquals(expected, actual);
     }
 
     @Test
     public void decreaseStation() {
-        Radio rad = new Radio();
-        rad.setCurNumStation(rad.getMinNumberStation() + 1);
+        rad3.setCurNumStation(rad3.getMinNumberStation() + 1);
 
-        rad.decreaseStation();
+        rad3.decreaseStation();
 
-        int expected = rad.getMinNumberStation();
-        int actual = rad.getCurNumStation();
+        int expected = rad3.getMinNumberStation();
+        int actual = rad3.getCurNumStation();
 
         assertEquals(expected, actual);
     }
 
     @Test
     public void increaseStationOverMax() {
-        Radio rad = new Radio();
-        rad.setCurNumStation(rad.getMaxNumberStation() + 1);
+        rad2.setCurNumStation(rad2.getMaxNumberStation());
 
-        rad.increaseStation();
+        rad2.increaseStation();
 
-        int expected = rad.getMinNumberStation();
-        int actual = rad.getCurNumStation() - 1;
+        int expected = rad2.getMinNumberStation();
+        int actual = rad2.getCurNumStation();
 
         assertEquals(expected, actual);
     }
 
     @Test
     public void decreaseStationOverMin() {
-        Radio rad = new Radio();
-        rad.setCurNumStation(rad.getMinNumberStation() - 1);
+        rad.setCurNumStation(rad.getMinNumberStation());
 
         rad.decreaseStation();
 
         int expected = rad.getMaxNumberStation();
-        int actual = rad.getCurNumStation() + 1;
+        int actual = rad.getCurNumStation();
 
         assertEquals(expected, actual);
     }
