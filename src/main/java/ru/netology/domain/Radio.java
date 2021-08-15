@@ -2,7 +2,7 @@ package ru.netology.domain;
 
 public class Radio {
     private int baseNumStation;
-    private int maxNumberStation = baseNumStation - 1;
+    private int maxNumberStation;
     private int minNumberStation;
     private int curNumStation;
     private int maxVolume = 100;
@@ -74,16 +74,8 @@ public class Radio {
         this.curNumStation = curNumStation;
     }
 
-//    public int getBaseNumStation() {
-//        return baseNumStation;
-//    }
-//
-//    public int setBaseNumStation(int baseNumStation) {
-//        setBaseNumStation(baseNumStation);
-//        return baseNumStation;
-//    }
-
     public Radio(int baseNumStation) {
+        maxNumberStation = baseNumStation - 1;
         this.baseNumStation = baseNumStation;
     }
 
