@@ -8,7 +8,7 @@ class RadioTest {
     Radio rad = new Radio();
     Radio rad1 = new Radio(74);
     Radio rad2 = new Radio(44);
-    Radio rad3 = new Radio(2);
+    Radio rad3 = new Radio(5);
     @Test
     public void increase1p() {  //Увеличение громкости на 1 пункт
         rad.setCurrentVolume(rad.getMaxVolume() - 1);
