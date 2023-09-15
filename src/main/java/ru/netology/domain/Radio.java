@@ -34,14 +34,16 @@ public class Radio {
         return currentVolume;
     }
 
-    public int increase1p() {
-        setCurrentVolume(currentVolume + 1);
-        return currentVolume;
+    public void increaseVolume() {
+        if (currentVolume < 10){
+        currentVolume = currentVolume + 1;
+        }
     }
 
-    public int decrease1p() {
-        setCurrentVolume(currentVolume - 1);
-        return currentVolume;
+    public void decreaseVolume() {
+        if (currentVolume > 0){
+        currentVolume = currentVolume - 1;
+        }
     }
 
     public void setCurrentVolume(int currentVolume) {
@@ -59,9 +61,10 @@ public class Radio {
         return curNumStation;
     }
 
-    public int decreaseStation() {
-        setCurNumStation(curNumStation - 1);
-        return curNumStation;
+    public void decreaseStation() {
+        if (curNumStation > 0) {
+            curNumStation = curNumStation - 1;
+        }
     }
 
     public void setCurNumStation(int curNumStation) {
