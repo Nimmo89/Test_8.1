@@ -3,7 +3,7 @@
 
 name: Java CI with Maven # как называется Workflow
 
-on: [push] # когда срабатывает (на push)
+on: [push, pull_request] # когда срабатывает (на push)
 
 jobs: # какие задачи делаем
   build: # сборка

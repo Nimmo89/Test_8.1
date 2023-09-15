@@ -1,7 +1,6 @@
 package ru.netology.domain;
 
 import org.junit.jupiter.api.Test;
-
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class RadioTest {
@@ -9,6 +8,7 @@ class RadioTest {
     Radio rad1 = new Radio(74);
     Radio rad2 = new Radio(44);
     Radio rad3 = new Radio(5);
+    
     @Test
     public void increase1p() {  //Увеличение громкости на 1 пункт
         rad.setCurrentVolume(rad.getMaxVolume() - 1);

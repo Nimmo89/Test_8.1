@@ -5,7 +5,7 @@ public class Radio {
     private int maxNumberStation;
     private int minNumberStation;
     private int curNumStation;
-    private int maxVolume = 100;
+    private int maxVolume = 10;
     private int minVolume = 0;
     private int currentVolume;
     private boolean on;
@@ -65,10 +65,10 @@ public class Radio {
     }
 
     public void setCurNumStation(int curNumStation) {
-        if (curNumStation < minNumberStation) {  //При выборе станции меньше минимальной, значение установится на минимальную станцию
+        if (curNumStation < minNumberStation) {  //При выборе станции меньше минимальной, значение установится на максимальную станцию
             curNumStation = maxNumberStation;
         }
-        if (curNumStation > maxNumberStation) {  //При выборе станции больше максимальной, значение установится на максимальную станцию
+        if (curNumStation > maxNumberStation) {  //При выборе станции больше максимальной, значение установится на минимальную станцию
             curNumStation = minNumberStation;
         }
         this.curNumStation = curNumStation;
